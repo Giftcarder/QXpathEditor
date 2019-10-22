@@ -7,7 +7,7 @@ class MatchHighlighter(QtGui.QSyntaxHighlighter):
         super(MatchHighlighter, self).__init__(document)
         self.prog = None
         self._format = QtGui.QTextCharFormat()
-        self._format.setBackground(QtGui.QBrush(QtGui.QColor('#bbfcbb')))
+        self._format.setBackground(QtGui.QBrush(QtGui.QColor('#0051ff')))
 
     def highlightBlock(self, text):
         if self.prog and text:
