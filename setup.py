@@ -33,19 +33,19 @@ else:
 
 
 setup(
-    name='QRegexEditor',
+    name='QXpathEditor',
     version=read_version(),
     packages=find_packages(),
     data_files=data_files,
-    author='Colin Duquesnoy',
-    author_email='colin.duquesnoy@gmail.com',
-    maintainer='Colin Duquesnoy',
-    maintainer_email='Colin Duquesnoy',
-    description='PyQt regex editor',
-    keywords=["regular expression editor"],
+    author='GiftCarder',
+    author_email='GiftCarder@pm.me',
+    maintainer='GiftCarder',
+    maintainer_email='GiftCarder@pm.me',
+    description='PyQt Xpath editor',
+    keywords=["Xpath editor"],
     install_requires=requirements,
     cmdclass=cmdclass,
-    url='https://github.com/ColinDuquesnoy/QRegexEditor',
+    url='https://github.com/GiftCarder/QXpathEditor',
     entry_points={
         'gui_scripts': [
             'QRegexEditor = qregexeditor.app.main:main'
