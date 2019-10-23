@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'C:\Dev\QRegexEditor\forms/editor.ui'
+# Form implementation generated from reading ui file 'C:\Dev\QXPathEditor\forms/editor.ui'
 #
 # Created by: PyQt5 UI code generator 5.5.1
 #
 # WARNING! All changes made in this file will be lost!
 
-from qregexeditor.qt import QtCore, QtGui, QtWidgets
+from qxpatheditor.qt import QtCore, QtGui, QtWidgets
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -28,10 +28,10 @@ class Ui_Form(object):
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setContentsMargins(-1, 0, -1, -1)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.lineEditRegex = QtWidgets.QLineEdit(self.groupBox)
-        self.lineEditRegex.setMinimumSize(QtCore.QSize(400, 0))
-        self.lineEditRegex.setObjectName("lineEditRegex")
-        self.horizontalLayout_2.addWidget(self.lineEditRegex)
+        self.lineEditXPath = QtWidgets.QLineEdit(self.groupBox)
+        self.lineEditXPath.setMinimumSize(QtCore.QSize(400, 0))
+        self.lineEditXPath.setObjectName("lineEditXPath")
+        self.horizontalLayout_2.addWidget(self.lineEditXPath)
         self.checkBoxIgnoreCase = QtWidgets.QCheckBox(self.groupBox)
         self.checkBoxIgnoreCase.setObjectName("checkBoxIgnoreCase")
         self.horizontalLayout_2.addWidget(self.checkBoxIgnoreCase)
@@ -69,7 +69,7 @@ class Ui_Form(object):
         Form.setWindowTitle(_translate("Form", "Form"))
         self.groupBox.setTitle(_translate("Form", "Regular expression"))
         self.lblError.setText(_translate("Form", "lblError"))
-        self.lineEditRegex.setToolTip(_translate("Form", "<html><head/><body><p>Type your regular expression here</p></body></html>"))
+        self.lineEditXPath.setToolTip(_translate("Form", "<html><head/><body><p>Type your regular expression here</p></body></html>"))
         self.checkBoxIgnoreCase.setToolTip(_translate("Form", "<html><head/><body><p>Perform case-insensitive matching; expressions like <span style=\" font-family:\'Courier New,courier\';\">[A-Z]</span> will match lowercase letters, too. This is not affected by the current locale.</p></body></html>"))
         self.checkBoxIgnoreCase.setText(_translate("Form", "Ignore case"))
         self.groupBox_2.setTitle(_translate("Form", "Test strings"))

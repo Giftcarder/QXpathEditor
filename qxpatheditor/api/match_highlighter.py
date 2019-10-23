@@ -1,5 +1,5 @@
 import re
-from qregexeditor.qt import QtGui
+from qxpatheditor.qt import QtGui
 
 
 class MatchHighlighter(QtGui.QSyntaxHighlighter):

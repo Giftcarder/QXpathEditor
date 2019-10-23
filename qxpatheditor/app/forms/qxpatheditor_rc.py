@@ -6,7 +6,7 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from qregexeditor.qt import QtCore
+from qxpatheditor.qt import QtCore
 
 qt_resource_data = b"\
 \x00\x00\x61\x7e\

@@ -17,16 +17,16 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>QRegexEditor</string>
+   <string>QXpathEditor</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="qregexeditor.qrc">
-    <normaloff>:/icons/share/qregexeditor.png</normaloff>:/icons/share/qregexeditor.png</iconset>
+   <iconset resource="qxpatheditor.qrc">
+    <normaloff>:/icons/share/qxpatheditor.png</normaloff>:/icons/share/qxpatheditor.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
-     <widget class="RegexEditorWidget" name="editor" native="true"/>
+     <widget class="XPathEditorWidget" name="editor" native="true"/>
     </item>
    </layout>
   </widget>
@@ -58,20 +58,20 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>RegexEditorWidget</class>
+   <class>XPathEditorWidget</class>
    <extends>QWidget</extends>
-   <header>qregexeditor.api</header>
+   <header>qxpatheditor.api</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>QuickRefWidget</class>
    <extends>QWidget</extends>
-   <header>qregexeditor.api</header>
+   <header>qxpatheditor.api</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="qregexeditor.qrc"/>
+  <include location="qxpatheditor.qrc"/>
  </resources>
  <connections/>
 </ui>

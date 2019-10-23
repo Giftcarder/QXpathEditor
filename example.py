@@ -6,12 +6,12 @@ from PyQt5.QtWidgets import QApplication, QMainWindow
 # if you use PyQt4 or PySide, you must set the QT_API environment variable
 # to select the proper bindings, see
 # https://github.com/pyQode/pyQode/wiki/Getting-started#qt-bindings-selection
-from qregexeditor.api import RegexEditorWidget, QuickRefWidget
+from qxpatheditor.api import XPathEditorWidget, QuickRefWidget
 
 
 app = QApplication(sys.argv)
 window = QMainWindow()
-editor = RegexEditorWidget()
+editor = XPathEditorWidget()
 quick_ref = QuickRefWidget()
 quick_ref.hide()
 window.setCentralWidget(editor)

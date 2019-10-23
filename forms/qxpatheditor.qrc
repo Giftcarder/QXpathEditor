@@ -1,5 +1,5 @@
 <RCC>
   <qresource prefix="icons">
-    <file>../share/qregexeditor.png</file>
+    <file>../share/qxpatheditor.png</file>
   </qresource>
 </RCC>

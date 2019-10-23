@@ -1,7 +1,7 @@
 """
 Main script
 """
-from qregexeditor.app import main
+from qxpatheditor.app import main
 
 if __name__ == '__main__':
     main()

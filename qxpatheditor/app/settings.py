@@ -2,12 +2,12 @@
 This module contains the code for accessing the application
 settings
 """
-from qregexeditor.qt import QtCore
+from qxpatheditor.qt import QtCore
 
 
 class Settings():
     def __init__(self):
-        self._settings = QtCore.QSettings('QRegexEditor')
+        self._settings = QtCore.QSettings('QXPathEditor')
 
     @property
     def window_geometry(self):
@@ -42,11 +42,11 @@ class Settings():
         self._settings.setValue('compile_flags', value)
 
     @property
-    def regex(self):
+    def xpath(self):
         return self._settings.value('last_pattern', '')
 
-    @regex.setter
-    def regex(self, value):
+    @xpath.setter
+    def xpath(self, value):
         self._settings.setValue('last_pattern', value)
 
     @property

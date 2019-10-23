@@ -2,19 +2,19 @@
     "files": [
         [
             "forms/editor.ui",
-            "qregexeditor/api/forms"
+            "qxpatheditor/api/forms"
         ],
         [
             "forms/quick_ref.ui",
-            "qregexeditor/api/forms"
+            "qxpatheditor/api/forms"
         ],
         [
             "forms/main_window.ui",
-            "qregexeditor/app/forms"
+            "qxpatheditor/app/forms"
         ],
         [
             "forms/*.qrc",
-            "qregexeditor/app/forms"
+            "qxpatheditor/app/forms"
         ]
     ],
     "pyrcc": "pyrcc5",

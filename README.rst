@@ -35,7 +35,7 @@ Using the widget in a custom PyQt application
 
 Use the widget as any other qt widget.
 
-You may specify the regular expression and the string pattern programmatically.
+You may specify the XPath expression and the string pattern programmatically.
 You might also want to connect to the ``quick_ref_requested`` signal so that your
 application can show/hide a quick reference widget in the most appropriate place.
 
@@ -50,12 +50,12 @@ application can show/hide a quick reference widget in the most appropriate place
     # if you use PyQt4 or PySide, you must set the QT_API environment variable
     # to select the proper bindings, see
     # https://github.com/pyQode/pyQode/wiki/Getting-started#qt-bindings-selection
-    from qregexeditor.api import RegexEditorWidget, QuickRefWidget
+    from qxpatheditor.api import XPathEditorWidget, QuickRefWidget
 
 
     app = QApplication(sys.argv)
     window = QMainWindow()
-    editor = RegexEditorWidget()
+    editor = XPathEditorWidget()
     quick_ref = QuickRefWidget()
     quick_ref.hide()
     window.setCentralWidget(editor)

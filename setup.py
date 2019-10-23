@@ -11,7 +11,7 @@ def read_version():
     """
     Reads the version without self importing
     """
-    with open("qregexeditor/__init__.py") as f:
+    with open("qxpatheditor/__init__.py") as f:
         lines = f.read().splitlines()
         for l in lines:
             if "__version__" in l:
@@ -27,8 +27,8 @@ if sys.platform == 'win32':
     data_files = []
 else:
     data_files = [
-        ('share/applications/', ['share/qregexeditor.desktop']),
-        ('share/pixmaps/', ['share/qregexeditor.png'])
+        ('share/applications/', ['share/qxpatheditor.desktop']),
+        ('share/pixmaps/', ['share/qxpatheditor.png'])
     ]
 
 
@@ -48,10 +48,10 @@ setup(
     url='https://github.com/GiftCarder/QXpathEditor',
     entry_points={
         'gui_scripts': [
-            'QRegexEditor = qregexeditor.app.main:main'
+            'QXPathEditor = qxpatheditor.app.main:main'
         ],
         'pyqt_distutils_hooks': [
-            'fix_qt_imports = qregexeditor._hooks:fix_qt_imports']
+            'fix_qt_imports = qxpatheditor._hooks:fix_qt_imports']
     },
     classifiers=[
         'Development Status :: 5 - Production/Stable',

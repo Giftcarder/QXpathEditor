@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'C:\Dev\QRegexEditor\forms/main_window.ui'
+# Form implementation generated from reading ui file 'C:\Dev\QXPathEditor\forms/main_window.ui'
 #
 # Created by: PyQt5 UI code generator 5.5.1
 #
 # WARNING! All changes made in this file will be lost!
 
-from qregexeditor.qt import QtCore, QtGui, QtWidgets
+from qxpatheditor.qt import QtCore, QtGui, QtWidgets
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -18,13 +18,13 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/icons/share/qregexeditor.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(":/icons/share/qxpatheditor.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout.setObjectName("gridLayout")
-        self.editor = RegexEditorWidget(self.centralwidget)
+        self.editor = XPathEditorWidget(self.centralwidget)
         self.editor.setObjectName("editor")
         self.gridLayout.addWidget(self.editor, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
@@ -49,8 +49,8 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "QRegexEditor"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "QXPathEditor"))
         self.dockWidget.setWindowTitle(_translate("MainWindow", "Quick reference"))
 
-from qregexeditor.api import QuickRefWidget, RegexEditorWidget
-from . import qregexeditor_rc
+from qxpatheditor.api import QuickRefWidget, XPathEditorWidget
+from . import qxpatheditor_rc

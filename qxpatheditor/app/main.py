@@ -2,8 +2,8 @@
 Application entry point
 """
 import sys
-from qregexeditor.qt import QtWidgets
-from qregexeditor.app.main_window import MainWindow
+from qxpatheditor.qt import QtWidgets
+from qxpatheditor.app.main_window import MainWindow
 
 
 def main():

@@ -2,7 +2,7 @@
 Contains the quick reference widget
 """
 import re
-from qregexeditor.qt import QtCore, QtWidgets
+from qxpatheditor.qt import QtCore, QtWidgets
 from .forms import quick_ref_ui
 
 

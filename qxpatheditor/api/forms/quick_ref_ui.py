@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'C:\Dev\QRegexEditor\forms/quick_ref.ui'
+# Form implementation generated from reading ui file 'C:\Dev\QXPathEditor\forms/quick_ref.ui'
 #
 # Created by: PyQt5 UI code generator 5.5.1
 #
 # WARNING! All changes made in this file will be lost!
 
-from qregexeditor.qt import QtCore, QtGui, QtWidgets
+from qxpatheditor.qt import QtCore, QtGui, QtWidgets
 
 class Ui_Form(object):
     def setupUi(self, Form):

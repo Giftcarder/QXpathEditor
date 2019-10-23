@@ -3,12 +3,12 @@ This module contains the editor widget implementation.
 """
 import re
 import sre_constants
-from qregexeditor.qt import QtCore, QtGui, QtWidgets
+from qxpatheditor.qt import QtCore, QtGui, QtWidgets
 from .forms import editor_ui
 from .match_highlighter import MatchHighlighter
 
 
-class RegexEditorWidget(QtWidgets.QWidget):
+class XPathEditorWidget(QtWidgets.QWidget):
     try:
         quick_ref_requested = QtCore.Signal(int)
     except AttributeError:
@@ -26,16 +26,16 @@ class RegexEditorWidget(QtWidgets.QWidget):
         self.ui.plainTextEditTestString.setPlainText(value)
 
     @property
-    def regex(self):
+    def xpath(self):
         """
         Gets/Sets the regular expression
         :return:
         """
-        return self.ui.lineEditRegex.text()
+        return self.ui.lineEditXPath.text()
 
-    @regex.setter
-    def regex(self, value):
-        self.ui.lineEditRegex.setText(value)
+    @xpath.setter
+    def xpath(self, value):
+        self.ui.lineEditXPath.setText(value)
 
     @property
     def compile_flags(self):
@@ -66,7 +66,7 @@ class RegexEditorWidget(QtWidgets.QWidget):
         self.ui.checkBoxQuickRef.setChecked(value)
 
     def __init__(self, parent=None):
-        super(RegexEditorWidget, self).__init__(parent)
+        super(XPathEditorWidget, self).__init__(parent)
         self.ui = editor_ui.Ui_Form()
         self.ui.setupUi(self)
         self.ui.lblError.hide()
@@ -74,7 +74,7 @@ class RegexEditorWidget(QtWidgets.QWidget):
             re.IGNORECASE: self.ui.checkBoxIgnoreCase,
             # add other flags here
         }
-        self.ui.lineEditRegex.textChanged.connect(self._update_view)
+        self.ui.lineEditXPath.textChanged.connect(self._update_view)
         self.ui.plainTextEditTestString.textChanged.connect(
             self._update_view)
         doc = self.ui.plainTextEditMatchResult.document()
@@ -99,14 +99,14 @@ class RegexEditorWidget(QtWidgets.QWidget):
         self.ui.lblError.show()
         self.ui.lblError.setText('Error: %s' % error)
         self._set_widget_background_color(
-            self.ui.lineEditRegex, QtGui.QColor('#fcbbbb'))
+            self.ui.lineEditXPath, QtGui.QColor('#fcbbbb'))
         self._highlighter.prog = None
         self._highlighter.rehighlight()
 
     def _show_match_results(self, prog):
         self.ui.lblError.hide()
         self._set_widget_background_color(
-            self.ui.lineEditRegex, QtGui.QColor('#bbfcbb'))
+            self.ui.lineEditWPath, QtGui.QColor('#bbfcbb'))
         self.ui.plainTextEditMatchResult.setPlainText(
             self.ui.plainTextEditTestString.toPlainText())
         self._highlighter.prog = prog
@@ -116,14 +116,14 @@ class RegexEditorWidget(QtWidgets.QWidget):
         self.ui.lblError.hide()
         pal = self.palette()
         self._set_widget_background_color(
-            self.ui.lineEditRegex, pal.color(pal.Base))
+            self.ui.lineEditXPath, pal.color(pal.Base))
         self._highlighter.prog = None
         self._highlighter.rehighlight()
 
     def _update_view(self, *args):
-        if self.regex:
+        if self.xpath:
             try:
-                prog = re.compile(self.regex, self.compile_flags)
+                prog = re.compile(self.xpath, self.compile_flags)
             except sre_constants.error as e:
                 self._show_error(e)
             else:
