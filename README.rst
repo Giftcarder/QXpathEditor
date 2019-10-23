@@ -1,17 +1,16 @@
 About
 -----
 
-QRegexEditor is a **simple** regular expression editor written in Python and
-PyQt.
+QXpathEditor is a **simple** XPath editor written in Python and
+PyQt. (based on QRegexEditor)
 
-You can use QRegexEditor as a standalone application but also as a widget
+You can use QXPathEditor as a standalone application but also as a widget
 in your own PyQt/PySide application.
 
 
 The tool has been inspired by:
 
-- rubular: http://rubular.com/
-- pythex: https://pythex.org/
+- QRegexEditor: https://github.com/ColinDuquesnoy/QRegexEditor
 
 
 Installation
@@ -19,11 +18,11 @@ Installation
 
 First install the package from pypi::
 
-    pip install qregexeditor --upgrade
+    pip install qxpatheditor --upgrade
 
 Then you can run the application::
 
-    QRegexEditor
+    QXPathEditor
 
 Dependencies
 ------------
