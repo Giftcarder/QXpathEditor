@@ -10,7 +10,7 @@ from qxpatheditor.qt import QtCore, QtGui, QtWidgets
 
 class Ui_Form(object):
     def setupUi(self, Form):
-        Form.setObjectName("Quick Guide")
+        Form.setObjectName("Quick Reference")
         Form.resize(608, 353)
         self.gridLayout = QtWidgets.QGridLayout(Form)
         self.gridLayout.setObjectName("gridLayout")

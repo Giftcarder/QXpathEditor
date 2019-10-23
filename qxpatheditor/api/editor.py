@@ -1,11 +1,10 @@
 """
 This module contains the editor widget implementation.
 """
-import re
-import sre_constants
 from qxpatheditor.qt import QtCore, QtGui, QtWidgets
 from .forms import editor_ui
 from .match_highlighter import MatchHighlighter
+from lxml import html
 
 
 class XPathEditorWidget(QtWidgets.QWidget):
@@ -38,23 +37,6 @@ class XPathEditorWidget(QtWidgets.QWidget):
         self.ui.lineEditXPath.setText(value)
 
     @property
-    def compile_flags(self):
-        """
-        Gets/Sets the compile flags
-        :return:
-        """
-        ret_val = 0
-        for flg, widget in self._mapping.items():
-            if widget.isChecked():
-                ret_val |= flg
-        return ret_val
-
-    @compile_flags.setter
-    def compile_flags(self, value):
-        for flg, widget in self._mapping.items():
-            widget.setChecked(bool(value & flg))
-
-    @property
     def quick_ref_checked(self):
         """
         Gets/sets the show quick ref checkbox state
@@ -70,10 +52,7 @@ class XPathEditorWidget(QtWidgets.QWidget):
         self.ui = editor_ui.Ui_Form()
         self.ui.setupUi(self)
         self.ui.lblError.hide()
-        self._mapping = {
-            re.IGNORECASE: self.ui.checkBoxIgnoreCase,
-            # add other flags here
-        }
+
         self.ui.lineEditXPath.textChanged.connect(self._update_view)
         self.ui.plainTextEditTestString.textChanged.connect(
             self._update_view)
@@ -103,14 +82,20 @@ class XPathEditorWidget(QtWidgets.QWidget):
         self._highlighter.prog = None
         self._highlighter.rehighlight()
 
-    def _show_match_results(self, prog):
+    def _show_match_results(self, prog, isChecked):
         self.ui.lblError.hide()
         self._set_widget_background_color(
             self.ui.lineEditXPath, QtGui.QColor('#bbfcbb'))
-        self.ui.plainTextEditMatchResult.setPlainText(
-            self.ui.plainTextEditTestString.toPlainText())
-        self._highlighter.prog = prog
-        self._highlighter.rehighlight()
+        if isChecked is True:
+            if len(prog) > 0:
+                self.ui.plainTextEditMatchResult.setPlainText(
+                    prog[0])
+        elif isChecked is False:
+            self.ui.plainTextEditMatchResult.setPlainText(
+                self.ui.plainTextEditTestString.toPlainText())
+            self._highlighter.prog = prog
+            self._highlighter.rehighlight()
+        
 
     def _clear(self):
         self.ui.lblError.hide()
@@ -123,10 +108,11 @@ class XPathEditorWidget(QtWidgets.QWidget):
     def _update_view(self, *args):
         if self.xpath:
             try:
-                prog = re.compile(self.xpath, self.compile_flags)
-            except sre_constants.error as e:
+                doc = self.ui.plainTextEditTestString.toPlainText()
+                prog = html.fromstring(doc).xpath(str(self.xpath))
+            except Exception as e:
                 self._show_error(e)
             else:
-                self._show_match_results(prog)
+                self._show_match_results(prog, self.ui.checkBoxIgnoreCase.isChecked())
         else:
             self._clear()

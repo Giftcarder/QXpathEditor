@@ -1,4 +1,3 @@
-import re
 from qxpatheditor.qt import QtGui
 
 
@@ -11,6 +10,8 @@ class MatchHighlighter(QtGui.QSyntaxHighlighter):
 
     def highlightBlock(self, text):
         if self.prog and text:
-            for m in self.prog.finditer(text):
-                start, end = m.span()
+            if len(self.prog) > 0:
+                value = self.prog[0]
+                find = text.find(value)
+                start, end = (find, find+len(value))
                 self.setFormat(start, end - start, self._format)
