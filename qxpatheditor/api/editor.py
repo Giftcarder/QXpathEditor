@@ -106,7 +106,7 @@ class XPathEditorWidget(QtWidgets.QWidget):
     def _show_match_results(self, prog):
         self.ui.lblError.hide()
         self._set_widget_background_color(
-            self.ui.lineEditWPath, QtGui.QColor('#bbfcbb'))
+            self.ui.lineEditXPath, QtGui.QColor('#bbfcbb'))
         self.ui.plainTextEditMatchResult.setPlainText(
             self.ui.plainTextEditTestString.toPlainText())
         self._highlighter.prog = prog
