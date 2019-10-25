@@ -56,7 +56,7 @@ class XPathEditorWidget(QtWidgets.QWidget):
         self.ui.lineEditXPath.textChanged.connect(self._update_view)
         self.ui.plainTextEditTestString.textChanged.connect(
             self._update_view)
-        doc = self.ui.plainTextEditMatchResult.document()
+        doc = str(self.ui.plainTextEditMatchResult.document())
         self._highlighter = MatchHighlighter(doc)
         self._highlighter.rehighlight()
         self.ui.checkBoxQuickRef.stateChanged.connect(
