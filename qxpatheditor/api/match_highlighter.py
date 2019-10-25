@@ -12,6 +12,6 @@ class MatchHighlighter(QtGui.QSyntaxHighlighter):
         if self.prog and text:
             if len(self.prog) > 0:
                 value = self.prog[0]
-                find = str(text).find(value)
-                start, end = (find, find+len(value))
+                find = text.find(str(value))
+                start, end = (find, find+len(str(value)))
                 self.setFormat(start, end - start, self._format)
