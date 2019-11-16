@@ -88,8 +88,11 @@ class XPathEditorWidget(QtWidgets.QWidget):
             self.ui.lineEditXPath, QtGui.QColor('#bbfcbb'))
         if isChecked is True:
             if len(prog) > 0:
+                matches = ""
+                for x in prog:
+                    matches += str(x) + "\n"
                 self.ui.plainTextEditMatchResult.setPlainText(
-                    str(prog[0]))
+                    str(matches))
         elif isChecked is False:
             self.ui.plainTextEditMatchResult.setPlainText(
                 self.ui.plainTextEditTestString.toPlainText())
