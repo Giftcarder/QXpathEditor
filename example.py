@@ -8,14 +8,16 @@ from PyQt5.QtWidgets import QApplication, QMainWindow
 # https://github.com/pyQode/pyQode/wiki/Getting-started#qt-bindings-selection
 from qxpatheditor.api import XPathEditorWidget, QuickRefWidget
 
-
-app = QApplication(sys.argv)
-window = QMainWindow()
-editor = XPathEditorWidget()
-quick_ref = QuickRefWidget()
-quick_ref.hide()
-window.setCentralWidget(editor)
-# show/hide quick reference widget
-editor.quick_ref_requested.connect(quick_ref.setVisible)
-window.show()
-app.exec_()
+try:
+    app = QApplication(sys.argv)
+    window = QMainWindow()
+    editor = XPathEditorWidget()
+    quick_ref = QuickRefWidget()
+    quick_ref.hide()
+    window.setCentralWidget(editor)
+    # show/hide quick reference widget
+    editor.quick_ref_requested.connect(quick_ref.setVisible)
+    window.show()
+    app.exec_()
+except Exception as e:
+    print(e)
